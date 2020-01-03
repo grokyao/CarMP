@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>代理注册页面</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" href="/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/layuiadmin/style/admin.css" media="all">
+    <link rel="stylesheet" href="/layuiadmin/style/login.css" media="all">
+
+</head>
+<body>
+    <div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" style="display: none;">
+        <form class="layui-form" action="" lay-filter="component-form-group">
+            <!--<input type="hidden" id="htradinglicense" name="htradinglicense" />
+            <input type="hidden" id="legalperson" name="legalperson" />-->
+
+            <div class="layadmin-user-login-main">
+                <div class="layadmin-user-login-box layadmin-user-login-header">
+                    <h2>法嘉华旅行社</h2>
+                    <p>邮轮分销平台</p>
+                </div>
+                <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span style="color:red;">*</span>用户名：</label>
+                        <div class="layui-input-block">
+                            <input id="username" type="text" name="username" lay-verify="required|usernameisexist" autocomplete="off" placeholder="请输入用户名" class="layui-input" onblur="isexist();">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span style="color:red;">*</span>密码：</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="password" id="password" lay-verify="required" placeholder="请输入密码" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span style="color:red;">*</span>确认密码：</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="repass" id="repass" lay-verify="required" placeholder="请输入确认密码" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span style="color:red;">*</span>分销商名称：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="agentname" id="agentname" lay-verify="required|agentisexist" placeholder="请输入分销商名称" class="layui-input" onblur="isexistagent();">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span style="color:red;">*</span>地址：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="address" id="address" lay-verify="required" placeholder="请输入地址" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span style="color:red;">*</span>联系人：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="contact" id="contact" lay-verify="required" placeholder="请输入联系人" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span style="color:red;">*</span>联系电话：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="mobile" id="mobile" lay-verify="required" placeholder="请输入联系电话" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span style="color:red;">*</span>邮箱：</label>
+                        <div class="layui-input-block">
+
+                            <input type="text" name="email" id="email" lay-verify="required" placeholder="请输入邮箱" class="layui-input">
+
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">营业执照：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="tradinglicense" id="tradinglicense" placeholder="请上传营业执照" class="layui-input" disabled="disabled">
+                            <input id="upload-tradinglicense" name="upload-tradinglicense" type="file" />
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">法人注册证：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="legalperson" id="legalperson" placeholder="请上传法人注册证" class="layui-input" disabled="disabled">
+                            <input id="upload-legalperson" name="upload-legalperson" type="file" />
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-reg-submit">注 册</button>
+                    </div>
+                    <div class="layui-trans layui-form-item layadmin-user-login-other">
+
+                        <a href="UserLogin.html" class="layadmin-user-jump-change layadmin-link layui-hide-xs">用已有帐号登入</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-trans layadmin-user-login-footer">
+
+                <p>© 2019 <a href="http://www.opvcruise.com/" target="_blank">www.opvcruise.com</a></p>
+                <p>
+
+                </p>
+            </div>
+        </form>
+    </div>
+    <script src="/layuiadmin/layui/layui.js"></script>
+    <script language=javascript src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        layui.config({
+            base: '/layuiadmin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index' //主入口模块
+        }).use(['index', 'user', 'upload', 'layer'], function () {
+            var $ = layui.$
+                , form = layui.form
+                , upload = layui.upload
+                , layer = layui.layer;
+
+            form.verify({
+                usernameisexist: function (value, item) {
+                    var a = '';
+                    $.ajax({
+                        type: 'POST',
+                        url: "/Ajax/Permission.ashx?command=IsExistUser&Date=" + new Date(),
+                        data: {
+                            username: value
+                        },
+                        dataType: "text",
+                        async: false,
+                        success: function (text) {
+                            if (text == "Y") {
+                                a = '用户名已经存在';
+                            }
+                        }
+                    });
+                    return a;
+                }
+                , agentisexist: function (value, item) {
+                    var a = '';
+                    $.ajax({
+                        type: 'POST',
+                        url: "/Ajax/Permission.ashx?command=IsExistAgent&Date=" + new Date(),
+                        data: {
+                            agentname: $("#agentname").val()
+                        },
+                        dataType: "text",
+                        async: false,
+                        success: function (text) {
+                            if (text == "Y") {
+                                a = '分销商已存在，请联系贵公司的注册人员为您开通账号！';
+                            }
+                        }
+                    });
+                    return a;
+                }
+            });
+
+
+            //法人注册证上传
+            upload.render({
+                elem: '#upload-legalperson'
+                , url: '/Ajax/FileUpload.ashx?command=UploadImg&type=agent&imgwidth=800&imgheight=600'
+                , accept: 'images'
+                , multiple: true
+                , exts: 'jpg|png|gif|bmp|jpeg'
+                , size: 50720000//最大允许上传的文件50M
+                , auto: true
+                , done: function (res) {
+                    if (res.path.length > 0) {
+                        $("#legalperson").val(res.path);
+                        layer.close(layer.msg());
+
+                        layer.msg('法人登记证-上传成功！');
+
+                    } else {
+                        layer.close(layer.msg());
+                        layer.msg('法人登记证-上传失败！');
+
+                    }
+                }
+                , before: function (obj) { //obj参数包含的信息，跟 choose回调完全一致，可参见上文。
+                    layer.msg('图片上传中...', {
+                        icon: 16,
+                        shade: 0.01,
+                        time: 0
+                    })
+                }
+            });
+
+            //营业执照
+            upload.render({
+                elem: '#upload-tradinglicense'
+                , url: '/Ajax/FileUpload.ashx?command=UploadImg&type=agent&imgwidth=800&imgheight=600'
+                , accept: 'images'
+                , multiple: true
+                , exts: 'jpg|png|gif|bmp|jpeg'
+                , size: 50720000//最大允许上传的文件50M
+                , auto: true
+                , done: function (res) {
+                    if (res.path.length > 0) {
+                        $("#tradinglicense").val(res.path); 
+                        layer.msg('营业执照-上传成功！'); 
+                    } else { 
+                        layer.msg('营业执照-上传失败！');
+                    }
+                }
+                , before: function (obj) { //obj参数包含的信息，跟 choose回调完全一致，可参见上文。
+                    layer.msg('图片上传中...', {
+                        icon: 16,
+                        shade: 0.01,
+                        time: 0
+                    })
+                }
+            });
+
+            form.render();
+            //提交
+            form.on('submit(LAY-user-reg-submit)', function (obj) {
+
+                var field = obj.field;
+                //确认密码
+                if (field.password !== field.repass) {
+                    return layer.msg('两次密码输入不一致');
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: "/Ajax/Permission.ashx?command=AgentRegister&Date=" + new Date(),
+                    data: {
+                        username: $("#username").val(),
+                        pwd: $("#password").val(),
+                        tradinglicense: $("#tradinglicense").val(),
+                        legalperson: $("#legalperson").val(),
+                        agentname: $("#agentname").val(),
+                        mobile: $("#mobile").val(),
+                        address: $("#address").val(),
+                        contact: $("#contact").val()
+                    },
+                    dataType: "text",
+                    success: function (text) {
+                        if (text == "Y") {
+                            layui.use('layer', function () {
+                                var layer = layui.layer;
+                                layer.msg('注册成功！5秒后将自动跳转到登录页！');
+                                setTimeout(function () {
+                                    window.location.href = "UserLogin.html";
+                                }, 5000);
+
+                            });
+                        } else {
+                            layui.use('layer', function () {
+                                var layer = layui.layer;
+                                layer.msg('注册失败！');
+                            });
+                        }
+                    }
+                });
+                return false;
+
+            });
+        });
+
+
+        function isexist() {//判断用户名是否重复
+            $.ajax({
+                type: 'POST',
+                url: "/Ajax/Permission.ashx?command=IsExistUser&Date=" + new Date(),
+                data: {
+                    username: $("#username").val()
+                },
+                dataType: "text",
+                async: false,
+                success: function (text) {
+                    if (text == "Y") {
+                        layui.use('layer', function () {
+                            var layer = layui.layer;
+                            layer.msg('用户名已经存在！');
+                        });
+                    }
+                }
+            });
+        }
+
+        function isexistagent() {//判断分销商名称是否重复
+            $.ajax({
+                type: 'POST',
+                url: "/Ajax/Permission.ashx?command=IsExistAgent&Date=" + new Date(),
+                data: {
+                    agentname: $("#agentname").val()
+                },
+                dataType: "text",
+                async: false,
+                success: function (text) {
+                    if (text == "Y") {
+                        layui.use('layer', function () {
+                            var layer = layui.layer;
+                            layer.msg('分销商已存在，请联系贵公司的注册人员为您开通账号！');
+
+                        });
+                    }
+                }
+            });
+        }
+
+    </script>
+
+</body>
+</html>
